@@ -1,0 +1,24 @@
+@function rem($px){
+    @return ($px / 16) * 1rem;
+}
+
+$marginM: 40px;
+$yamaguchi-red: #ff0000;
+
+@mixin media-sp(){
+    @media screen and (max-width: 650px) {
+        @content
+    }
+}
+
+// :の後ろはデフォルト値
+@mixin font_en($weight,$style:normal){ 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin font_jp($weight){
+    font-family: Yugochi;
+    font-weight: $weight;
+}
