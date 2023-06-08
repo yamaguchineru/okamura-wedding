@@ -6,7 +6,7 @@ body{
     background-color: $yamaguchi-red;
     @include font_en(700);
     @include media-sp{
-      margin-top: 10px;
+      margin-top: 500px;
     }
   }
 }
