@@ -1,0 +1,78 @@
+.y-bg-grunge{
+    background-image: url(img/bg-pattern-grunge.webp);
+    background-repeat: repeat;
+    background-position: top;
+    background-size: 100%;
+}
+
+.y-bg-flower{
+    background-image: url(img/bg-pattern-flower.webp);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 80%;
+}
+.y-bg-color-dark-brown {
+    background-color: #251F16;
+}
+
+.y-bg-profile {
+    background-image: 
+    url(img/bg-ornament-profile-a.webp),
+    url(img/bg-ornament-profile-b.webp);
+
+    background-position:
+    top -10% left 0%,
+    bottom -20% right 0%;
+    
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-blend-mode: multiply;
+}
+
+.y-bg-date-photo {
+    background-image: url(img/bg-date.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.y-bg-svg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.y-bg-map {
+    background-image: url(img/bg-map.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.y-bg-paper {
+    border: 1.875rem solid orange;
+    border-image-source: url(img/bg-paper.webp);
+    border-image-slice: 4% fill;
+    border-image-repeat: repeat;
+}
+
+.y-bg-form {
+    border: 30px solid orange;
+    border-image-source: url(img/bg-form.webp);
+    border-image-slice: 33.4% fill;
+    border-image-repeat: repeat;
+}
+
+.y-bg-button {
+    border: 30px solid orange;
+    border-image-source: url(img/bg-button.webp);
+    border-image-slice: 33.4% fill;
+    border-image-repeat: repeat;
+}
+
+.y-bg-footer {
+    background-image: url(img/bg-footer.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

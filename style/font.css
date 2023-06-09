@@ -1,0 +1,228 @@
+/* remじゃなくてemのほうがいい */
+
+p {
+    background-color: transparent;
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+
+
+.y-text-vertical-ml::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-right: -0.2rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-vertical-ml::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -0.2rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-vertical-l::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-right: -0.3rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-vertical-l::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -0.4rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+
+
+
+.y-text-3xl {
+    font-weight: 600;
+    /* 1.75rem = 28px */
+    font-size: 1.75rem;
+    line-height: 1;
+    background-color: purple;
+}
+
+.y-text-3xl::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.2rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-3xl::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: -0.2rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-2xl {
+    font-size: 1.75rem;
+    line-height: 1;
+    background-color: red;
+}
+
+.y-text-2xl::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.2rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-2xl::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: -0.2rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-xl {
+    font-size: 1.5rem;
+    line-height: 1;
+    background-color: violet;
+}
+
+.y-text-xl::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.1rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-xl::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: -0.1rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+
+.y-text-l {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    background-color: orange;
+
+}
+
+.y-text-l::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.3rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-l::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: -0.3rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+
+
+.y-text-ml {
+    color: white;
+    font-size: 1.125rem;
+    font-family: "YuMincho +36p Kana", "游明朝体+36ポかな";
+    font-weight: 600;
+    line-height: 1.5;
+    background-color: green;
+
+}
+
+.y-text-ml::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.3rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-ml::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: -0.3rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+
+
+.y-text-m {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    background-color: lightseagreen;
+}
+
+.y-text-m::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.3rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-m::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: -0.3rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+
+.y-text-s {
+    font-size: 0.75rem;
+    line-height: 1;
+    background-color: dodgerblue;
+
+}
+
+.y-text-s::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.05rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+.y-text-s::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: -0.05rem;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}

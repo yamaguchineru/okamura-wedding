@@ -2,8 +2,18 @@
     @return ($px / 16) * 1rem;
 }
 
-$marginM: 40px;
-$yamaguchi-red: #ff0000;
+$y-gold: goldenrod;
+$y-red: red;
+$y-green: green;
+$y-turquoise: lightseagreen;
+$y-lime: lime;
+$y-purple: blueviolet;
+$y-blue: blue;
+$y-sky: dodgerblue;
+$y-pink: magenta;
+
+$margin40: 40px;
+$yamaguchi-red: none;
 
 @mixin media-sp(){
     @media screen and (max-width: 650px) {

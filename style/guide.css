@@ -1,0 +1,10 @@
+/* 
+ガイド、マージン、文字背景色
+コメントイン→ガイドなし
+コメントアウト→ガイドあり 
+*/
+
+/* 
+.my{opacity: 0;}
+p,a{background-color: transparent!important;}
+.guide{background-image: none!important;} */
