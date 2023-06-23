@@ -1,0 +1,1176 @@
+.block-guide {
+  z-index: 1000;
+  background-image: url('img/bg-guide.webp');
+  background-color: rgba(0, 0, 100, 0);
+  background-size: contain;
+  width: calc(100% - rem(120));
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  pointer-events: none;
+
+  @include media-sp() {
+    width: calc(100% - rem(32));
+  }
+}
+
+.block-grunge {
+  position: absolute;
+  width: 100%;
+  height: 470rem;
+  z-index: 100;
+  background-image: url(img/bg-pattern-grunge.webp);
+  background-repeat: repeat;
+  background-position: top;
+  background-size: 100%;
+  pointer-events: none;
+}
+
+//左右柱
+.block-side-bar-left,
+.block-side-bar-right {
+  z-index: 10;
+  opacity: 1;
+  position: fixed;
+  background-color: $y-dark-brown;
+
+  p {
+    position: absolute;
+    white-space: nowrap;
+    transform-origin: center;
+    color: white;
+    @include text-ml;
+
+    &::before,
+    &::after {
+      @include text-ml-before-after;
+    }
+  }
+
+  @include media-sp() {
+    display: none;
+  }
+}
+
+.block-side-bar-left {
+  width: 3.75rem;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  p {
+    top: 50%;
+    left: -10%;
+    transform: rotate(-90deg);
+  }
+}
+
+.block-side-bar-right {
+  width: 3.75rem;
+  height: 100vh;
+  top: 0;
+  right: 0;
+
+  p {
+    top: 50%;
+    right: -91%;
+    transform: rotate(90deg);
+  }
+}
+
+// 全体を縦に積む
+.block-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+// ヘッダー
+.block-header {
+  z-index: 50;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  mix-blend-mode: difference;
+  top: rem(32);
+
+  @include media-sp {
+    top: rem(20);
+
+  }
+
+  a.aisatsu,
+  a.nichiji,
+  a.kaijo,
+  a.goshukketsu {
+    @include media-sp {
+      display: none;
+    }
+  }
+
+  a.aisatsu {
+    margin-right: rem(40);
+  }
+
+  a.nichiji {
+    margin-right: rem(20);
+  }
+
+  a.kaijo {
+    margin-right: rem(40);
+  }
+
+  a.goshukketsu {
+    margin-right: rem(0);
+  }
+
+  img.svg-logo-header {
+    height: rem(30);
+    margin: 0 auto;
+
+    @include media-sp {
+      height: rem(20);
+    }
+  }
+}
+
+
+//KV・Messageブロック
+.block-kv-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 rem(60);
+
+  background-image: url(img/bg-pattern-flower.webp);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 80%;
+
+
+  /* マージン左右60pxずつとった上で12分割中の12 */
+  @include media-sp() {
+    padding: 0 rem(16);
+  }
+
+
+  //丸窓とテキスト
+  .block-kv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+
+    @include media-sp {
+      margin-top: rem(24);
+
+    }
+
+    .block-marumado {
+      position: relative;
+      width: calc(100% / 12 * 6);
+      height: 1px; //SPを考慮して、左右のテキストと縦積みにしている。PCでは横並びになるように丸窓をheight:1pxに。
+      margin-top: rem(80);
+
+      @include media-sp {
+        width: calc(100% / 12 * 14);
+        height: auto;
+        margin-top: rem(0);
+        margin-bottom: rem(-48);
+      }
+
+      img.svg-ornament-marumado-a,
+      img.svg-ornament-marumado-b {
+        position: absolute;
+      }
+
+      img.svg-ornament-marumado-a {
+        height: rem(72);
+        top: rem(45);
+        left: 8%;
+
+        @include media-sp {
+          top: 10%;
+          left: 15%;
+          height: rem(38);
+        }
+      }
+
+      img.svg-ornament-marumado-b {
+        height: rem(128);
+        top: rem(365);
+        right: -8%;
+
+        @include media-sp {
+          top: 73%;
+          right: 9%;
+          height: rem(43);
+        }
+      }
+    }
+
+    .block-text {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: rem(550);
+      background-color: rgba(225, 0, 0, 0.1);
+      gap: calc(100% / 12 * 6);
+
+      @include media-sp {
+        height: auto;
+        gap: calc(100% / 12 * 2);
+        margin-bottom: rem(80);
+      }
+    }
+
+    //KV新郎新婦テキスト共通
+    .block-kv-shinro,
+    .block-kv-shinpu {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      margin-top: rem(-80);
+
+      @include media-sp {
+        margin-top: rem(0);
+      }
+
+      img {
+        position: absolute;
+      }
+
+
+      .block-kv-katagaki {
+        @include text-ml;
+        @include text-vertical;
+        color: white;
+
+        &::before,
+        &::after {
+          display: block;
+          width: 0;
+          height: 0;
+          margin-left: -0.3rem;
+          content: "";
+        }
+      }
+
+      .block-kv-name {
+        @include text-3xl;
+        @include text-vertical;
+        color: white;
+      }
+
+      .block-kv-name-en {
+        @include text-l;
+        @include text-vertical;
+        color: white;
+
+        &::before,
+        &::after {
+          display: block;
+          width: 0;
+          height: 0;
+          margin-left: -0.3em;
+          content: "";
+        }
+      }
+
+    }
+
+
+    //KV 新郎テキスト
+    .block-kv-shinro {
+      justify-content: end;
+      width: calc(100% / 12 * 3);
+
+      img.svg {
+        top: rem(64);
+        right: rem(8);
+        height: rem(224);
+
+        @include media-sp {
+          height: rem(200);
+        }
+      }
+
+      .block-kv-katagaki {
+        margin-right: rem(20);
+      }
+
+      .block-kv-name {
+        margin: 2.5rem 1.75rem 0 0;
+        letter-spacing: 0.4em;
+        transform: scaleX(0.9);
+
+      }
+
+      .block-kv-name-en {
+        margin-top: 2.5rem;
+        white-space: nowrap;
+        letter-spacing: 0.1em;
+      }
+    }
+
+
+    //KV 新婦テキスト
+    .block-kv-shinpu {
+      justify-content: start;
+      width: calc(100% / 12 * 3);
+
+      img.svg {
+        top: rem(48);
+        left: rem(48);
+        height: rem(176);
+
+        @include media-sp {
+          height: rem(170);
+        }
+      }
+
+      .block-kv-katagaki {
+        margin-left: rem(-10);
+      }
+
+      .block-kv-name {
+        margin: 2.5rem 1.75rem 0 0;
+        letter-spacing: 0.4em;
+        transform: scaleX(0.9);
+      }
+
+      .block-kv-name-en {
+        margin: 2.5rem 1.75rem 0 0;
+        white-space: nowrap;
+        letter-spacing: 0.1em;
+      }
+    }
+
+    //KV 新婦テキスト
+
+  }
+}
+
+
+
+// メッセージ
+.block-message-paper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 12 * 10);
+  @include bg-paper;
+
+  @include media-sp() {
+    width: calc(100% / 12 * 12);
+    /* 12分割中の12 */
+  }
+
+  p {
+    @include text-m;
+
+    &::before,
+    &::after {
+      @include text-m-before-after;
+    }
+  }
+
+  img.title-en {
+    height: rem(57);
+    margin-bottom: rem(-18);
+  }
+}
+
+
+//プロフィール
+.block-profile {
+  position: relative;
+  background-color: $y-sepia;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 0 rem(60);
+
+  background-image:
+    url(img/bg-ornament-profile-a.webp),
+    url(img/bg-ornament-profile-b.webp);
+
+  background-position:
+    top -10% left 0%,
+    bottom -20% right 0%;
+
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-blend-mode: multiply;
+
+  @include media-sp() {
+    padding: 0 rem(16);
+  }
+
+  img.svg-title-profile {
+    height: rem(52);
+    margin-bottom: rem(-13);
+
+    @include media-sp {
+      height: rem(45);
+
+    }
+  }
+
+  //プロフィール新郎新婦ブロック
+  .block-profile-shinro-shinpu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    @include media-sp() {
+      flex-direction: column;
+    }
+  }
+
+  //プロフィール新郎新婦共通
+  .block-profile-shinro,
+  .block-profile-shinpu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+
+    @include media-sp() {
+      align-items: center;
+    }
+
+    .block-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      p {
+        @include text-s;
+        @include text-vertical;
+        margin-bottom: rem(16);
+
+      }
+    }
+
+    .block-photo {
+      position: relative;
+      width: 100%;
+
+      @include media-sp() {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img.photo {
+        width: 100% / 6 * 3;
+
+        @include media-sp() {
+          width: 100% / 12 * 8;
+        }
+      }
+    }
+
+    p.block-name,
+    p.block-text {
+      width: 100% / 6 * 4;
+
+      @include media-sp() {
+        width: 100% / 12 * 10;
+      }
+    }
+
+    p.block-name {
+      @include text-xl;
+
+      @include media-sp() {
+        text-align: center;
+      }
+    }
+
+    p.block-text {
+      @include text-m;
+
+      &::before,
+      &::after {
+        @include text-m-before-after;
+      }
+    }
+  }
+
+  //プロフィール新郎新婦共通
+
+  //プロフィール新郎
+  .block-profile-shinro {
+    .block-vertical {
+      align-items: center;
+      margin-left: 100% / 6 * 1;
+
+      @include media-sp() {
+        margin-left: 0;
+      }
+
+      div.line {
+        height: 10px;
+
+        @include media-sp() {
+          display: none;
+        }
+      }
+    }
+
+    .block-photo {
+      img.photo {
+        margin-left: 100% / 6 * 2;
+
+        @include media-sp() {
+          margin-left: 0;
+        }
+      }
+
+      img.ornament-yuki {
+        top: 70%;
+        left: 13%;
+        height: rem(60);
+
+        @include media-sp() {
+          display: none;
+        }
+      }
+
+      img.ornament-okamura {
+        top: 90%;
+        left: 30%;
+        height: rem(60);
+
+        @include media-sp() {
+          display: none;
+        }
+      }
+    }
+
+    p.block-name,
+    p.block-text {
+      margin-left: 100% / 6 * 1;
+
+      @include media-sp() {
+        margin-left: 0;
+      }
+    }
+  }
+
+  //プロフィール新郎
+
+  //プロフィール新婦
+  .block-profile-shinpu {
+    .block-vertical {
+      align-items: end;
+      width: 100%;
+
+      @include media-sp() {
+        align-items: center;
+        margin-top: rem(80);
+      }
+
+      >div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 100% / 6 * 1;
+
+        @include media-sp() {
+          margin-right: 0;
+        }
+
+        >div.line {
+          height: 10px;
+
+          @include media-sp() {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .block-photo {
+      img.photo {
+        margin-left: 100% / 6 * 1;
+
+        @include media-sp() {
+          margin-left: 0;
+        }
+      }
+
+      img.ornament-taki {
+        position: absolute;
+        top: 70%;
+        right: 13%;
+        height: rem(60);
+
+        @include media-sp() {
+          display: none;
+        }
+      }
+
+      img.ornament-sato {
+        position: absolute;
+        top: 90%;
+        right: 30%;
+        height: rem(60);
+
+        @include media-sp() {
+          display: none;
+        }
+      }
+    }
+
+    p.block-name,
+    .block-text {
+      margin-left: 100% / 6 * 2;
+
+      @include media-sp() {
+        margin-left: 0;
+      }
+    }
+  }
+
+  //プロフィール新婦
+
+}
+
+//日時・会場
+.block-date-place {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+
+  .pattern-a,
+  .pattern-b {
+    z-index: 1;
+    position: absolute;
+    opacity: 0.3;
+  }
+
+  .pattern-a {
+    width: rem(352);
+    top: rem(125);
+    left: rem(-170);
+  }
+
+  .pattern-b {
+    width: rem(352);
+    top: rem(330);
+    right: rem(-175);
+  }
+
+  //日時・会場共通
+  .block-date,
+  .block-place {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: rem(500);
+
+    @include media-sp {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .block-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      p.title {
+        @include text-ml;
+
+        &::before,
+        &::after {
+          @include text-ml-before-after;
+        }
+      }
+
+      p.headline {
+        @include text-l;
+
+        &::before,
+        &::after {
+          @include text-l-before-after;
+        }
+      }
+
+      p {
+        @include text-m;
+
+        &::before,
+        &::after {
+          @include text-m-before-after;
+        }
+      }
+
+      p.small {
+        @include text-s;
+
+        &::before,
+        &::after {
+          @include text-s-before-after;
+        }
+      }
+    }
+
+    .block-photo {
+      width: 100%;
+
+      @include media-sp {
+        height: rem(400);
+      }
+    }
+  }
+
+  //日時・会場共通
+
+  //日時
+  .block-date {
+    background-color: #001C12;
+
+    .block-text {
+      @include media-sp {
+        order: 2;
+      }
+    }
+
+    .block-photo {
+      background-image: url(img/photo-date.webp);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include media-sp {
+        order: 1;
+      }
+    }
+  }
+
+  //会場
+  .block-place {
+    background-color: #251F16;
+
+    .block-photo {
+      background-image: url(img/photo-place.webp);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .block-text {
+      div.btn {
+        position: relative;
+        border: 12px solid orange;
+        border-image-source: url(img/bg-btn-brown.webp);
+        border-image-slice: 33.4% fill;
+        border-image-repeat: repeat;
+
+        .block-text-arrow {
+          margin: 0 1.5rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+
+        a.link {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+    }
+
+  }
+}
+
+//日時・会場
+
+img.svg-title-date-place {
+  height: rem(38);
+
+  @include media-sp {
+    height: rem(33);
+  }
+}
+
+
+//マップ
+.block-map {
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url(img/bg-map.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .block-map-paper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(calc(100% - rem(120)) / 12 * 10);
+    /* マージン左右60pxずつとった上で12分割中の10 */
+
+    @include bg-paper;
+
+    @include media-sp() {
+      width: calc(calc(100% - rem(32)) / 12 * 12);
+    }
+
+    p.title {
+      @include text-l;
+
+      &::before,
+      &::after {
+        @include text-l-before-after;
+      }
+    }
+
+    .block-text-arrow {
+      a {
+        @include text-m;
+
+        &::before,
+        &::after {
+          @include text-m-before-after;
+        }
+      }
+    }
+
+    img.map {
+      width: calc(calc(100% + rem(30) + rem(30)) /10*6);
+
+      @include media-sp() {
+        width: calc(calc(100% + rem(30) + rem(30)) /12*10);
+      }
+    }
+
+    p {
+      width: calc(calc(100% + rem(60)) / 10 * 6);
+      @include text-m;
+
+      &::before,
+      &::after {
+        @include text-m-before-after;
+      }
+
+      @include media-sp {
+        width: calc(calc(100% + rem(60)) / 12 * 10);
+
+      }
+    }
+
+  }
+}
+
+//RSVP
+.block-rsvp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(img/bg-pattern-rsvp.webp);
+  background-repeat: repeat-y;
+  background-position: top;
+  background-size: 100%;
+  //つなぎ目の白い線が消せない..
+  width: 100%;
+  padding: 0 rem(60);
+
+  /* マージン左右60pxずつとった上で12分割中の12 */
+  @include media-sp() {
+    padding: 0 rem(32);
+  }
+}
+
+.block-rsvp-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    @include text-m;
+
+    &::before,
+    &::after {
+      @include text-m-before-after;
+    }
+  }
+}
+
+.block-rsvp-paper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 12 * 8);
+  @include bg-paper;
+
+  /* 12分割中の8 */
+  @include media-sp() {
+    width: 100%;
+  }
+
+  p {
+    @include text-m;
+
+    &::before,
+    &::after {
+      @include text-m-before-after;
+    }
+  }
+
+  .block-attend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: rem(64);
+
+    @include media-sp {
+      gap: rem(32);
+
+    }
+
+
+    img.attend,
+    img.absence {
+      width: rem(150);
+
+      @include media-sp {
+        width: 100% / 12 * 4;
+      }
+    }
+
+    // img.attend {
+    //   margin-right: rem(64);
+
+    // }
+
+  }
+
+  .block-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: calc(calc(100% + rem(30) + rem(30)) / 8 * 6);
+
+    /* マージン左右30pxずつ(ボーダー画像分)足した上で8分割中の6 */
+    @include media-sp() {
+      width: calc(calc(100% + rem(30) + rem(30)) / 12 * 10);
+    }
+  }
+
+}
+
+.block-madeni {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include media-sp {
+    flex-direction: column;
+    gap: rem(20);
+  }
+}
+
+.svg-title-rsvp {
+  height: rem(38);
+
+  @include media-sp {
+    height: rem(33);
+  }
+}
+
+.svg-dashed-line {
+  width: rem(144);
+}
+
+
+//フッター
+.block-footer {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-image: url(img/bg-footer.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #D2CDB1;
+
+
+  img.svg-title-footer {
+    width: calc(100% / 12 * 5);
+
+    @include media-sp {
+      width: calc(100% / 12 * 11);
+
+    }
+  }
+
+  img.go-top {
+    width: 100% / 12 * 1;
+    position: absolute;
+    top: rem(40);
+    right: rem(60);
+
+    @include media-sp {
+      width: calc((100% - 64px) / 12 * 2);
+      top: auto;
+      bottom: rem(20);
+      right: rem(32);
+
+    }
+  }
+}
+
+.block-footer-text {
+  width: 100%;
+  padding: 0 rem(60);
+
+  @include media-sp {
+    padding: 0 rem(32);
+  }
+
+  .block-footer-date-place {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: rem(64);
+
+    @include media-sp {
+      flex-direction: column;
+      gap: rem(40);
+    }
+  }
+}
+
+.block-footer-date {
+  display: flex;
+  flex-direction: row;
+  height: rem(75);
+  overflow: visible;
+
+}
+
+.block-footer-place {
+  display: flex;
+  flex-direction: row;
+}
+
+.block-footer-date-title,
+.block-footer-place-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: rem(32);
+
+  p {
+    @include text-s;
+    @include text-vertical;
+
+    &::before,
+    &::after {
+      display: block;
+      width: 0;
+      height: 0;
+      margin-left: -0.1em;
+      content: "";
+    }
+
+    margin-bottom: rem(8);
+  }
+}
+
+.block-footer-date-contents,
+.block-footer-place-contents {
+  display: flex;
+  flex-direction: column;
+
+  p.title {
+    @include text-m;
+
+    &::before,
+    &::after {
+      @include text-m-before-after;
+    }
+  }
+
+  p {
+    @include text-s;
+
+    &::before,
+    &::after {
+      @include text-s-before-after;
+    }
+  }
+
+
+
+
+}
+
+.block-copyright-ytlogo {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  width: 100%;
+  height: 1px;
+
+  p {
+    width: 100% / 12 * 10;
+    @include text-s;
+
+    &::before,
+    &::after {
+      @include text-s-before-after;
+    }
+
+    letter-spacing: 0.1em;
+
+    @include media-sp {
+      @include text-ss;
+    }
+  }
+
+  img {
+    width: 100% / 12 * 1;
+    /* 12分割中の1 */
+  }
+}

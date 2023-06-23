@@ -14,13 +14,10 @@
   <script type="module" src="/main.js"></script>
 
   <!-- ガイド -->
-  <div class="block-guide"></div>
-  
+  <div class="guide"></div>
+
   <!-- 全体の紙テクスチャ -->
-  <div class="block-grunge"></div>
-
-
-
+  <div class="y-bg-grunge"></div>
   <div class="block-all"><!-- ブロックを縦に積む -->
 
     <!-- ヘッダー -->
@@ -34,80 +31,83 @@
 
     <!-- 左右柱 -->
     <!-- 左 -->
-    <div class="block-side-bar-left">
-      <p>11.4 sat.</p>
+    <div class="block-side-bar-left y-text-white y-bg-color-dark-brown">
+      <p class="y-text-ml transform -rotate-90">11.4 sat.</p>
     </div>
     <!-- 右 -->
-    <div class="block-side-bar-right">
-      <p>KAZAN KAIKAN</p>
+    <div class="block-side-bar-right y-text-white y-bg-color-dark-brown fixed">
+      <p class="y-text-ml transform rotate-90">KAZAN KAIKAN</p>
     </div>
 
     <!-- KV・Messageブロック -->
-    <div class="block-kv-message">
+    <div class="block-kv-message y-bg-flower">
+      <div class='my40'></div>
       <div class="block-kv"><!-- テキスト・丸窓・テキスト -->
+
+        <!-- 新郎テキスト -->
+        <div class="block-kv-shinro">
+          <img src="img/bg-ornament-profile-man.svg" alt="">
+          <p class="block-kv-katagaki y-text-vertical-ml text-vertical y-text-ml">新郎</p>
+          <p class="block-kv-name text-vertical y-text-3xl text-white">岡村裕樹</p>
+          <p class="block-kv-name-en y-text-vertical-l text-vertical y-text-l text-white">Yuki Okamura</p>
+          <!-- 縦書き英語が勝手に改行される問題は white-space: nowrap;でok -->
+        </div>
+
         <!-- 丸窓 -->
         <div class="block-marumado">
           <img src="img/ornament-marumado-a.svg" class="svg-ornament-marumado-a" alt="">
           <img src="img/ornament-marumado-b.svg" class="svg-ornament-marumado-b" alt="">
           <img src="img/photo-marumado.webp" alt="">
         </div>
-        <!-- 新郎新婦テキスト -->
-        <div class="block-text">
-          <!-- 新郎テキスト -->
-          <div class="block-kv-shinro">
-            <img src="img/bg-ornament-profile-man.svg" class="svg">
-            <p class="block-kv-katagaki">新郎</p>
-            <p class="block-kv-name">岡村裕樹</p>
-            <p class="block-kv-name-en">Yuki Okamura</p>
-            <!-- 縦書き英語が勝手に改行される問題は white-space: nowrap;でok -->
-          </div>
-          <!-- 新婦テキスト -->
-          <div class="block-kv-shinpu">
-            <img src="img/bg-ornament-profile-woman.svg" class="svg">
-            <p class="block-kv-name-en">Taki Sato</p>
-            <p class="block-kv-name">佐藤多希</p>
-            <p class="block-kv-katagaki">新婦</p>
-          </div>
+
+        <!-- 新婦テキスト -->
+        <div class="block-kv-shinpu">
+          <img src="img/bg-ornament-profile-woman.svg" alt="">
+          <p class="block-kv-name-en y-text-vertical-l  text-vertical y-text-l text-white">Taki Sato</p>
+          <p class="block-kv-name text-vertical y-text-3xl text-white">佐藤多希</p>
+          <p class="block-kv-katagaki y-text-vertical-ml text-vertical y-text-ml">新婦</p>
         </div>
       </div>
+      <div class="my80"></div>
+
 
       <!-- Message紙ブロック -->
-      <div class="block-message-paper y-text-center">
+      <div class="block-message y-text-center y-bg-paper">
         <div class="-my30"></div><!-- ボーダー画像分をネガティブマージン -->
         <div class="my80"></div>
         <img src="img/title-message.svg" class="title-en" alt="">
         <div class='my40'></div>
-        <p class="pc">
+        <p class="y-text-m y-pc">
           皆様いかがお過ごしでしょうか<br>
           このたび 結婚式を執り行うこととなりました
         </p>
-        <p class="sp">
+        <p class="y-text-m y-sp">
           皆様いかがお過ごしでしょうか<br>
           このたび 結婚式を<br>
           執り行うこととなりました
         </p>
         <div class='my40'></div>
-        <p class="pc">
+        <p class="y-text-m y-pc">
           日頃お世話になっております みなさまに 私どもの門出を<br>
           お見守りいただきたくささやかながら小宴を催したく存じます
         </p>
-        <p class="sp">
+        <p class="y-text-m y-sp">
           日頃お世話になっております みなさまに<br>
           私どもの門出を お見守りいただきたく<br>
           ささやかながら小宴を催したく存じます
         </p>
         <div class='my40'></div>
-        <p class="pc">
+        <p class="y-text-m y-pc">
           ご多用中 誠に恐縮ではございますがぜひご出席いただきたく<br>
           ご案内申し上げます
         </p>
-        <p class="sp">
+        <p class="y-text-m y-sp">
           ご多用中 誠に恐縮ではございますが<br>
           ぜひご出席いただきたく<br>
           ご案内申し上げます
         </p>
         <div class='my40'></div>
-        <p class="">
+        <p class="y-text-m">
           岡村裕樹<br>
           佐藤多希</p>
         <div class="my80"></div>
@@ -119,19 +119,19 @@
 
 
     <!-- プロフィールブロック -->
-    <div class="block-profile">
+    <div class="block-profile y-bg-profile">
       <div class="my160"></div>
       <img src="img/title-profile.svg" class="svg-title-profile" alt="">
       <div class='my40'></div>
 
       <!-- 新郎新婦ブロック -->
-      <div class="block-profile-shinro-shinpu">
+      <div class="block-shinro-shinpu">
 
         <!-- 新郎ブロック -->
-        <div class="block-profile-shinro">
+        <div class="block-shinro">
           <!-- 新郎縦書き -->
           <div class="block-vertical"><!-- 縦書き -->
-            <p>新郎</p>
+            <p class="text-vertical y-text-s mb-2">新郎</p>
             <!-- 子孫セレクタのクラス名はシンプルにし、重複を許可するルールで一度やってみる。クラス名重複はするが、親セレクタの指定で別のcssを当てる。 (block-〇〇)-->
             <div class="line">
               <img src="img/vertical-line.svg" alt="">
@@ -149,25 +149,22 @@
 						解決方法→囲んでいるdivに items-center をつけたら治った。items-stretchだとだめ。それ以外ならok。
 					-->
           <div class="my80"></div>
-          <p class="block-name">岡村裕樹</p>
+          <p class="block-name y-text-xl">岡村裕樹</p>
           <div class="my32"></div>
-          <p class="block-text pc">
-            1988年3月1日、東京都生まれ。会社員。<br>
+          <p class="block-text y-text-m">
+            1988年3月1日、東京都生まれ。A型。会社員。<br>
             アウトドアが好きで週末は車で<br>
             少し遠くまで出掛けます。犬が好きです。<br>
-            美味しい料理をご用意してお待ちしています！
-          </p>
-          <p class="block-text sp">
-            1988年3月1日、東京都生まれ。会社員。アウトドアが好きで週末は車で少し遠くまで出掛けます。犬が好きです。美味しい料理をご用意してお待ちしています！
+            美味しい料理・お酒をご用意してお待ちしております！
           </p>
         </div>
 
         <!-- 新婦ブロック -->
-        <div class="block-profile-shinpu">
+        <div class="block-shinpu">
           <!-- 新婦縦書き -->
           <div class="block-vertical"><!-- 縦書きを右端に -->
             <div><!-- 縦書き -->
-              <p>新婦</p>
+              <p class="text-vertical y-text-s mb-2">新婦</p>
               <div class="line">
                 <img src="img/vertical-line.svg" class="line" alt="">
               </div>
@@ -177,21 +174,18 @@
           <!-- 新婦フォト -->
           <div class="block-photo">
             <img src="img/photo-woman.webp" class="photo" alt=""><!-- 新郎画像 -->
-            <img src="img/ornament-taki.svg" class="ornament-taki" alt="">
-            <img src="img/ornament-sato.svg" class="ornament-sato" alt="">
+            <img src="img/ornament-taki.svg" class="ornament-taki absolute" alt="">
+            <img src="img/ornament-sato.svg" class="ornament-sato absolute" alt="">
           </div>
 
           <div class="my80"></div>
-          <p class="block-name">佐藤 多希</p>
+          <p class="block-name y-text-xl">佐藤 多希</p>
           <div class="my32"></div>
-          <p class="block-text pc">
-            1990年12月14日、新潟県生まれ。会社員。<br>
+          <p class="block-text y-text-m">
+            1990年12月14日、新潟県生まれ。B型。会社員。<br>
             田舎で育ったためかのんびりした性格です。<br>
             本を読んだり、映画を見ることが好きです。<br>
-            皆様にお会いできる日を楽しみにしています。
-          </p>
-          <p class="block-text sp">
-            1990年12月14日、新潟県生まれ。会社員。田舎で育ったためかのんびりした性格です。本を読んだり、映画を見ることが好きです。皆様にお会いできる日を楽しみにしています。
+            皆様にお会いできることを楽しみにしています。
           </p>
         </div>
       </div>
@@ -208,22 +202,22 @@
           <div class="my80"></div>
           <img src="img/title-date.svg" class="svg-title-date-place" alt="">
           <div class="my20"></div>
-          <p class="title y-text-ml">日時</p>
+          <p class="y-text-ml">日時</p>
           <div class='my40'></div>
-          <p class="headline">2023年11月4日（土曜日）</p>
+          <p class="y-text-l">2023年11月4日（土曜日）</p>
           <div class="my20"></div>
-          <p>挙　式　10時30分</p>
+          <p class="y-text-m">挙　式　10時30分</p>
           <div class="my12"></div>
-          <p class="small">（受　付　10時00分）</p>
+          <p class="y-text-s">（受　付　10時00分）</p>
           <div class="my20"></div>
-          <p>披露宴　12時00分</p>
+          <p class="y-text-m">披露宴　12時00分</p>
           <div class="my12"></div>
-          <p class="small">（受　付　11時30分）</p>
+          <p class="y-text-s">（受　付　11時30分）</p>
           <div class="my80"></div>
         </div>
         <div class="block-photo"></div><!-- 日時写真ブロック -->
       </div>
-
+      
       <!-- 会場ブロック -->
       <div class="block-place">
         <div class="block-photo"></div><!-- 会場写真ブロック -->
@@ -231,20 +225,18 @@
           <div class="my80"></div>
           <img src="img/title-place.svg" class="svg-title-date-place" alt="">
           <div class="my20"></div>
-          <p class="title">会場</p>
+          <p class="y-text-ml">会場</p>
           <div class='my40'></div>
-          <p class="headline">霞山会館ウエディング</p>
+          <p class="y-text-l">霞山会館ウエディング</p>
           <div class="my20"></div>
-          <p>〒100-0013 東京都千代田区</p>
+          <p class="y-text-m">〒100-0013 東京都千代田区</p>
           <div class="my20"></div>
-          <p>霞が関三丁目2番1号</p>
+          <p class="y-text-m">霞が関三丁目2番1号</p>
           <div class="my20"></div>
-
-          <div class="btn y-flex-col"><!-- ボタン。ボーダーは12px -->
-            <a class="link" href="https://www.kazankaikan-wedding.com/" target="_blank"></a>
+          <div class="y-btn y-flex-col"><!-- ボタン。ボーダーは12px -->
             <div class="-my12"></div><!-- ボーダー画像分12pxをネガティブマージン -->
             <div class="my16"></div>
-            <div class="block-text-arrow"><!-- 矢印と横並び -->
+            <div class="y-flex-row-justify-center btn">
               <p class="y-text-m mr-2">公式サイト</p>
               <img src="img/arrow-white.svg" alt="" width="12">
             </div>
@@ -257,29 +249,28 @@
     </div>
 
     <!-- mapブロック -->
-    <div class="block-map">
+    <div class="block-map y-bg-map">
       <div class="my160"></div>
       <!-- map 紙ブロック -->
-      <div class="block-map-paper y-text-center y-w-12-10-m60">
+      <div class="block-map-paper y-text-center y-w-12-10-m60 y-bg-paper">
         <div class="-my30"></div><!-- ボーダー画像分をネガティブマージン -->
         <div class="my80"></div>
-        <p class="title">霞山会館ウエディング</p>
+        <p class="y-text-l">霞山会館ウエディング</p>
         <div class="my20"></div>
-        <div class="block-text-arrow flex flex-row">
-          <a class="y-text-m mr-2 underline" href="https://www.kazankaikan-wedding.com/">kazankaikan-wedding.com</a>
+        <div class="flex flex-row">
+          <a class="y-text-m mr-2 underline" href="kazankaikan-wedding.com">kazankaikan-wedding.com</a>
           <img src="img/arrow.svg" alt="" width="12">
         </div>
         <div class='my40'></div>
         <img src="img/map.webp" alt="" class="map"><!-- マップ -->
         <div class='my40'></div>
-        <p>電話番号：03-3581-1022</p>
+        <p class="y-text-m">電話番号：03-3581-1022</p>
         <div class="my32"></div>
-        <p class="pc">〒100-0013 東京都千代田区 霞が関三丁目<br>
-          2番1号 霞が関コモンゲート西館37階</p>
-        <p class="sp">〒100-0013 東京都千代田区 霞が関三丁目 
+        <p class="y-text-m">〒100-0013 東京都千代田区 霞が関三丁目<br>
           2番1号 霞が関コモンゲート西館37階</p>
         <div class="my32"></div>
-        <p>地下鉄虎ノ門駅／東京メトロ銀座線虎ノ門駅11番出口より徒歩1分、東京メトロ丸ノ内線・日比谷線・千代田線霞ヶ関駅A13出口より徒歩5分、東京駅より車で約8分
+        <p class="y-text-m">地下鉄虎ノ門駅／東京メトロ銀座線虎ノ門駅11番出口より徒歩1分、東京メトロ
+          丸ノ内線・日比谷線・千代田線霞ヶ関駅A13出口より徒歩5分、東京駅より車で約8分
         </p>
         <div class="my80"></div>
         <div class="-my30"></div><!-- ボーダー画像分をネガティブマージン -->
@@ -296,22 +287,22 @@
         <div class="my20"></div>
         <p class="y-text-ml">ご出欠</p>
         <div class='my40'></div>
-        <p class="pc">
+        <p class="y-text-m y-pc">
           郵送でのご案内状に代わり当招待状をお送りしております<br>
           お手数ではございますが出席情報のご登録をお願い申し上げます
         </p>
-        <p class="sp">
+        <p class="y-text-m y-sp">
           郵送でのご案内状に代わり<br>
           当招待状をお送りしております<br>
           お手数ではございますが出席情報の<br>
           ご登録をお願い申し上げます
         </p>
         <div class="my32"></div>
-        <p class="pc">
+        <p class="y-text-m y-pc">
           また当日のお食事のご用意にあたりアレルギー等がある方は<br>
           アレルギー欄にご記入くださいますようお願い申し上げます
         </p>
-        <p class="sp">
+        <p class="y-text-m y-sp">
           また当日のお食事のご用意にあたり<br>
           アレルギー等がある方はアレルギー欄に<br>
           ご記入くださいますよう<br>
@@ -332,95 +323,97 @@
       </div>
 
       <!-- RSVP 紙ブロック -->
-      <div class="block-rsvp-paper">
+      <div class="block-rsvp-paper y-bg-paper">
         <div class="-my30"></div><!-- ボーダー画像分をネガティブマージン -->
         <div class="my80"></div><!-- 紙ボーダーは30px(1.875rem) -->
-        <p>いずれかをお選びください</p>
+        <p class="y-text-m">
+          いずれかをお選びください
+        </p>
         <div class='my40'></div>
         <div class="block-attend"><!-- ご出席・ご欠席 -->
           <img src="img/will-attend.png" class="attend">
-          <img src="img/will-absence.png" class="absence">
+          <img src="img/will-not-attend.png" class="not-attend">
         </div>
         <div class='my40'></div>
 
         <!-- フォーム -->
         <div class="block-form">
-          <p>*は必須項目です</p>
+          <p class="y-text-m">*は必須項目です</p>
           <div class="my32"></div>
           <hr class="hr" color="#D7D3CF">
           <div class="my32"></div>
           <div class="y-flex-2col"><!-- 2カラムフォーム -->
             <!-- 全てのinput要素をまとめてwrapにしたかったけど2カラムの間のマージンを空き要素幅いっぱいに、ができそうにないので2colのとこだけspace betweenで横並びにする -->
             <div class="y-2col-half">
-              <p>姓 *</p>
+              <p class="y-text-m">姓 *</p>
               <div class="my12"></div>
-              <div class="form"></div>
+              <div class="y-bg-form"></div>
             </div>
             <div class="y-2col-half">
-              <p>名 *</p>
+              <p class="y-text-m">名 *</p>
               <div class="my12"></div>
-              <div class="form"></div>
+              <div class="y-bg-form"></div>
             </div>
           </div>
           <div class="my32"></div>
           <div class="y-flex-2col"><!-- 2カラムフォーム -->
             <div class="y-2col-half">
-              <p>せい *</p>
+              <p class="y-text-m">せい *</p>
               <div class="my12"></div>
-              <div class="form"></div>
+              <div class="y-bg-form"></div>
             </div>
             <div class="y-2col-half">
-              <p>めい *</p>
+              <p class="y-text-m">めい *</p>
               <div class="my12"></div>
-              <div class="form"></div>
+              <div class="y-bg-form"></div>
             </div>
           </div>
           <div class="my32"></div>
-          <p>メールアドレス*</p>
+          <p class="y-text-m">メールアドレス*</p>
           <div class="my12"></div>
-          <div class="form"></div>
+          <div class="y-bg-form"></div>
           <div class="my32"></div>
           <hr class="hr" color="#D7D3CF">
           <div class="my32"></div>
           <div class="y-flex-2col"><!-- 2カラムフォーム -->
             <div class="y-2col-half">
-              <p>郵便番号</p>
+              <p class="y-text-m">郵便番号</p>
               <div class="my12"></div>
-              <div class="form"></div>
+              <div class="y-bg-form"></div>
             </div>
             <div class="y-2col-half">
-              <p>電話番号</p>
+              <p class="y-text-m">電話番号</p>
               <div class="my12"></div>
-              <div class="form"></div>
+              <div class="y-bg-form"></div>
             </div>
           </div>
           <div class="my32"></div>
-          <p>住所*</p>
+          <p class="y-text-m">住所*</p>
           <div class="my12"></div>
-          <div class="form"></div>
+          <div class="y-bg-form"></div>
           <div class="my32"></div>
-          <p>建物名*</p>
+          <p class="y-text-m">建物名*</p>
           <div class="my12"></div>
-          <div class="form"></div>
+          <div class="y-bg-form"></div>
           <div class="my32"></div>
           <hr class="hr" color="#D7D3CF">
           <div class="my32"></div>
-          <p>アレルギー</p>
+          <p class="y-text-m">アレルギー</p>
           <div class="my12"></div>
-          <p>いずれかをお選びください</p>
+          <p class="y-text-m">いずれかをお選びください</p>
           <div class="my12"></div>
-          <div class="form"></div>
+          <div class="y-bg-form"></div>
           <div class="my32"></div>
-          <p>メッセージ</p>
+          <p class="y-text-m">メッセージ</p>
           <div class="my12"></div>
-          <div class="form-l"></div>
+          <div class="y-bg-form-l"></div>
           <div class="my32"></div>
           <hr class="hr" color="#D7D3CF">
           <div class="my32"></div>
           <div class="y-bg-button"><!-- ボタン。ボーダー分でパディングうまくいってない -->
             <div class="-my30"></div><!-- ボーダー画像分30pxをネガティブマージン -->
             <div class="my20"></div>
-            <p class="y-text-white">入力内容を確認する</p><!-- ボタン内テキストのline-heightのbefore afterがなぜか表示上効かない.. -->
+            <p class="y-text-m y-text-white">入力内容を確認する</p><!-- ボタン内テキストのline-heightのbefore afterがなぜか表示上効かない.. -->
             <div class="my20"></div>
             <div class="-my30"></div><!-- ボーダー画像分30pxをネガティブマージン -->
           </div>
@@ -434,67 +427,66 @@
 
     <!-- footer -->
     <div class="block-footer">
-      <a href="#"><img src="img/footer-go-top.svg" class="go-top" alt=""><!-- footer 上に戻るボタン--></a>
+      <img src="img/footer-go-top.svg" class="go-top" alt=""><!-- footer 上に戻るボタン-->
       <div class="block-footer-text"><!-- footer全体flex -->
-        <div class="my160 pc"></div>
-        <div class="my80 sp"></div>
+        <div class="my160 y-pc"></div>
+        <div class="my80 y-sp"></div>
         <img src="img/title-footer.svg" class="svg-title-footer" alt="">
-        <div class="my12 pc"></div>
-        <div class="my8 sp"></div>
+        <div class="my12 y-pc"></div>
+        <div class="my8 y-sp"></div>
 
         <!-- 日時会場ブロック -->
-        <div class="block-footer-date-place">
+        <div class="block-date-place">
 
           <!-- 日時ブロック -->
-          <div class="block-footer-date">
+          <div class="block-footer-date mr-12">
             <!-- 日時タイトル -->
-            <div class="block-footer-date-title">
-              <p>日時</p>
+            <div class="flex flex-col items-center mr-8">
+              <p class="text-vertical y-text-s mb-2">日時</p>
               <div class="y-height-1"><!-- 縦線をmargin無視させたいので高さ1pxのdivでくくってる -->
                 <img src="img/vertical-line.svg" alt="">
               </div>
             </div>
             <!-- 日時コンテンツ -->
-            <div class="block-footer-date-contents">
-              <p class="title">2023年11月4日（土曜日）</p>
+            <div class="flex flex-col">
+              <p class="y-text-m">2023年11月4日（土曜日）</p>
               <div class="my20"></div>
-              <p class="">挙　式　10時30分（受付 10時00分）</p>
+              <p class="y-text-s">挙　式　10時30分（受付 10時00分）</p>
               <div class="my12"></div>
-              <p class="">披露宴　12時00分（受付 11時30分）</p>
+              <p class="y-text-s">披露宴　12時00分（受付 11時30分）</p>
             </div>
           </div>
           <!-- 会場ブロック -->
+          <div class="my40"></div>
           <div class="block-footer-place">
             <!-- 会場タイトル -->
-            <div class="block-footer-place-title">
-              <p>会場</p>
+            <div class="flex flex-col items-center mr-8">
+              <p class="text-vertical y-text-s mb-2">会場</p>
               <div class="y-height-1"><!-- 縦線をmargin無視させたいので高さ1pxのdivでくくってる -->
                 <img src="img/vertical-line.svg" alt="">
               </div>
             </div>
             <!-- 会場コンテンツ -->
-            <div class="block-footer-place-contents">
-              <p class="title ">2023年11月4日（土曜日）</p>
+            <div class="flex flex-col">
+              <p class="y-text-m">2023年11月4日（土曜日）</p>
               <div class="my20"></div>
-              <p class="">挙　式　10時30分（受付 10時00分）</p>
+              <p class="y-text-s">挙　式　10時30分（受付 10時00分）</p>
               <div class="my12"></div>
-              <p class="">披露宴　12時00分（受付 11時30分）</p>
+              <p class="y-text-s">披露宴　12時00分（受付 11時30分）</p>
             </div>
           </div>
         </div>
-        <div class="my160 pc"></div>
-        <div class="my80 sp"></div>
+        <div class="my160"></div>
         <!-- copyrightとYTロゴ -->
         <div class="block-copyright-ytlogo">
           <!-- 右のYTロゴをmargin無視させたいので高さ1pxのdivでくくってる -->
-          <p class=""><!-- copyright -->
-            © 2023 This site was created by Yuki Okamura and Shohei Yamaguchi. | ALL RIGHTS
+          <p class="y-text-s"><!-- copyright -->
+            © 2023 This site was created by Yuki Okamura and his friend Shohei Yamaguchi. | ALL RIGHTS
             RESERVED
           </p>
           <img src="img/footer-logo.svg" alt="">
         </div>
-        <div class="my80 pc"></div>
-        <div class="my20 sp"></div>
+        <div class="my80"></div>
       </div>
     </div><!-- footer -->
   </div><!-- ブロックを縦に積む -->

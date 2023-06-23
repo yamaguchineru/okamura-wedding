@@ -1,3 +1,4 @@
+// rem(40)と書けば40pxのrem変換した数値が入るようになる
 @function rem($px){
     @return ($px / 16) * 1rem;
 }
@@ -12,15 +13,138 @@ $y-blue: blue;
 $y-sky: dodgerblue;
 $y-pink: magenta;
 
+$y-sepia: #D9DBD0;
+$y-dark-green: #14201A;//rsvpの背景色。未使用。
+$y-dark-brown: #251F16;//左右柱の背景色。
+
 $margin40: 40px;
 $yamaguchi-red: none;
 
-@mixin media-sp(){
-    @media screen and (max-width: 650px) {
-        @content
-    }
+
+
+@mixin text-3xl(){ 
+    font-weight: 600;
+    font-size: rem(28);
+    line-height: 1;
+    background-color: purple;
+}
+@mixin text-3xl-before-after(){
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.2em;
+    content: "";
 }
 
+@mixin text-2xl(){ 
+    font-size: rem(28);
+    line-height: 1;
+    background-color: red;
+}
+@mixin text-2xl-before-after(){
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.2em;
+    content: "";
+}
+
+@mixin text-xl(){ 
+    font-size: rem(24);
+    line-height: 1;
+    background-color: violet;
+}
+//xlはbeforeとafterなしでok
+
+@mixin text-l(){ 
+    font-size: rem(18);
+    line-height: 1.5;
+    background-color: orange;
+}
+@mixin text-l-before-after(){
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.3em;
+    content: "";
+}
+
+@mixin text-ml(){ 
+    color: white;
+    font-size: rem(18);
+    font-family: "YuMincho +36p Kana", "游明朝体+36ポかな";
+    font-weight: 600;
+    line-height: 1.5;
+    background-color: green;
+}
+@mixin text-ml-before-after(){
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.3em;
+    content: "";
+}
+
+@mixin text-m(){ 
+    font-size: rem(14);
+    line-height: 1.6;
+    background-color: lightseagreen;
+}
+@mixin text-m-before-after(){
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.3em;
+    /* calcで計算式だそうとおもたけどなぜかうまくいかん */
+    content: "";
+}
+
+@mixin text-s(){ 
+    font-size: rem(12);
+    line-height: 1.4;
+    background-color: dodgerblue;
+}
+@mixin text-s-before-after(){
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -0.2em;
+    content: "";
+}
+
+
+@mixin text-ss(){ 
+    font-size: rem(8);
+    line-height: 1.4;
+    background-color: lime;
+}
+//sはbeforeとafterなしでok
+
+@mixin text-vertical(){
+    writing-mode: vertical-rl;
+    letter-spacing: 0.75em;
+}
+
+//紙テクスチャ背景
+@mixin bg-paper(){
+    border: 1.875rem solid orange;
+    border-image-source: url(img/bg-paper.webp);
+    border-image-slice: 4% fill;
+    border-image-repeat: repeat;
+}
+
+
+// レスポンシブ対応
+$breakpoint: 650px;
+// mixinの定義
+@mixin media-sp() {
+		@media screen and (max-width: $breakpoint) {
+			@content;
+		}
+}
+
+
+// ↓ただのメモ。使ってない。
 // :の後ろはデフォルト値
 @mixin font_en($weight,$style:normal){ 
     font-family: 'Courier New', Courier, monospace;
