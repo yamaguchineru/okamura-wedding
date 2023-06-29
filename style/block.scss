@@ -1,6 +1,13 @@
+body {
+  background-image: url(/img/bg-pattern-flower.webp);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
 .block-guide {
   z-index: 1000;
-  background-image: url('img/bg-guide.webp');
+  background-image: url('/img/bg-guide.webp');
   background-color: rgba(0, 0, 100, 0);
   background-size: contain;
   width: calc(100% - rem(120));
@@ -17,17 +24,6 @@
   }
 }
 
-.block-grunge {
-  position: absolute;
-  width: 100%;
-  height: 470rem;
-  z-index: 100;
-  background-image: url(img/bg-pattern-grunge.webp);
-  background-repeat: repeat;
-  background-position: top;
-  background-size: 100%;
-  pointer-events: none;
-}
 
 //左右柱
 .block-side-bar-left,
@@ -83,10 +79,24 @@
 
 // 全体を縦に積む
 .block-all {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.block-grunge {
+  position: absolute;
+  width: 100%;
+  // height: 470rem;
+  height: 100%;
+  z-index: 100;
+  background-image: url(/img/bg-pattern-grunge.webp);
+  background-repeat: repeat;
+  background-position: top;
+  background-size: 100%;
+  pointer-events: none;
 }
 
 // ヘッダー
@@ -110,6 +120,13 @@
   a.nichiji,
   a.kaijo,
   a.goshukketsu {
+    @include text-ml;
+
+    &::before,
+    &::after {
+      @include text-ml-before-after;
+    }
+
     @include media-sp {
       display: none;
     }
@@ -150,7 +167,7 @@
   width: 100%;
   padding: 0 rem(60);
 
-  background-image: url(img/bg-pattern-flower.webp);
+  background-image: url(/img/bg-pattern-flower.webp);
   background-repeat: repeat;
   background-position: center;
   background-size: 80%;
@@ -162,8 +179,10 @@
   }
 
 
+
   //丸窓とテキスト
   .block-kv {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,8 +191,62 @@
 
     @include media-sp {
       margin-top: rem(24);
+    }
+
+
+
+    .go-rsvp {
+      position: absolute;
+      bottom: rem(40);
+      right: rem(40);
+      width: rem(150);
+      height: rem(150);
+      transition: 0.5s;
+
+      &:hover {
+        opacity: 0.7;
+        transition: 0.5s;
+      }
+
+      p {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 92%;
+        color: white;
+        text-align: center;
+        @include text-m;
+
+        &::before,
+        &::after {
+          @include text-m-before-after;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      a {
+        position: absolute;
+        z-index: 2;
+        top: 0%;
+        left: 0%;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+
+      }
 
     }
+
 
     .block-marumado {
       position: relative;
@@ -218,6 +291,7 @@
       }
     }
 
+    //KV新郎新婦テキスト
     .block-text {
       display: flex;
       flex-direction: row;
@@ -225,13 +299,13 @@
       justify-content: center;
       width: 100%;
       height: rem(550);
-      background-color: rgba(225, 0, 0, 0.1);
+      // background-color: rgba(225, 0, 0, 0.1);
       gap: calc(100% / 12 * 6);
+      margin-bottom: rem(80);
 
       @include media-sp {
         height: auto;
         gap: calc(100% / 12 * 2);
-        margin-bottom: rem(80);
       }
     }
 
@@ -371,6 +445,7 @@
   flex-direction: column;
   align-items: center;
   width: calc(100% / 12 * 10);
+  text-align: center;
   @include bg-paper;
 
   @include media-sp() {
@@ -406,8 +481,8 @@
   padding: 0 rem(60);
 
   background-image:
-    url(img/bg-ornament-profile-a.webp),
-    url(img/bg-ornament-profile-b.webp);
+    url(/img/bg-ornament-profile-a.webp),
+    url(/img/bg-ornament-profile-b.webp);
 
   background-position:
     top -10% left 0%,
@@ -544,6 +619,7 @@
       }
 
       img.ornament-yuki {
+        position: absolute;
         top: 70%;
         left: 13%;
         height: rem(60);
@@ -554,6 +630,7 @@
       }
 
       img.ornament-okamura {
+        position: absolute;
         top: 90%;
         left: 30%;
         height: rem(60);
@@ -663,23 +740,44 @@
   width: 100%;
   overflow: hidden;
 
+  p,
+  a {
+    color: white;
+  }
+
   .pattern-a,
   .pattern-b {
     z-index: 1;
     position: absolute;
     opacity: 0.3;
+
+    @include media-sp {
+      opacity: 0.2;
+    }
   }
 
   .pattern-a {
     width: rem(352);
     top: rem(125);
     left: rem(-170);
+
+    @include media-sp {
+      width: rem(240);
+      top: rem(225);
+      left: rem(-170);
+    }
   }
 
   .pattern-b {
     width: rem(352);
     top: rem(330);
     right: rem(-175);
+
+    @include media-sp {
+      width: rem(240);
+      top: rem(1070);
+      right: rem(-165);
+    }
   }
 
   //日時・会場共通
@@ -696,6 +794,7 @@
       height: auto;
     }
 
+    //日時・会場共通のテキスト
     .block-text {
       display: flex;
       flex-direction: column;
@@ -749,7 +848,7 @@
     }
   }
 
-  //日時・会場共通
+  //日時・会場共通おわり
 
   //日時
   .block-date {
@@ -762,7 +861,7 @@
     }
 
     .block-photo {
-      background-image: url(img/photo-date.webp);
+      background-image: url(/img/photo-date.webp);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -778,7 +877,7 @@
     background-color: #251F16;
 
     .block-photo {
-      background-image: url(img/photo-place.webp);
+      background-image: url(/img/photo-place.webp);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -788,9 +887,13 @@
       div.btn {
         position: relative;
         border: 12px solid orange;
-        border-image-source: url(img/bg-btn-brown.webp);
+        border-image-source: url(/img/bg-btn-brown.webp);
         border-image-slice: 33.4% fill;
         border-image-repeat: repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
 
         .block-text-arrow {
           margin: 0 1.5rem;
@@ -798,6 +901,14 @@
           flex-direction: row;
           align-items: center;
           justify-content: center;
+          p {
+            @include text-m;
+            &::before,
+            &::after {
+              @include text-m-before-after;
+            }
+            margin-right: rem(8);
+          }
         }
 
         a.link {
@@ -833,7 +944,7 @@ img.svg-title-date-place {
   flex-direction: column;
   align-items: center;
 
-  background-image: url(img/bg-map.webp);
+  background-image: url(/img/bg-map.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -860,19 +971,32 @@ img.svg-title-date-place {
       }
     }
 
+    p {
+      text-align: center;
+    }
+
     .block-text-arrow {
+      display: flex;
+      flex-direction: row;
+
       a {
         @include text-m;
+        margin-right: rem(8);
+        text-decoration: underline;
 
         &::before,
         &::after {
           @include text-m-before-after;
         }
       }
+      img {
+        height: rem(12);
+      }
     }
 
-    img.map {
+    .map {
       width: calc(calc(100% + rem(30) + rem(30)) /10*6);
+      height: rem(400);
 
       @include media-sp() {
         width: calc(calc(100% + rem(30) + rem(30)) /12*10);
@@ -902,10 +1026,10 @@ img.svg-title-date-place {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(img/bg-pattern-rsvp.webp);
-  background-repeat: repeat-y;
-  background-position: top;
-  background-size: 100%;
+  background-image: url(/img/bg-pattern-rsvp.webp);
+  background-repeat: repeat;
+  // background-position: top;
+  background-size: rem(75);
   //つなぎ目の白い線が消せない..
   width: 100%;
   padding: 0 rem(60);
@@ -920,9 +1044,20 @@ img.svg-title-date-place {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+
+  p.title {
+    @include text-ml;
+    &::before,
+    &::after {
+      @include text-ml-before-after;
+    }
+  }
 
   p {
+    text-align: center;
     @include text-m;
+    color: white;
 
     &::before,
     &::after {
@@ -931,53 +1066,142 @@ img.svg-title-date-place {
   }
 }
 
+
+.block-madeni {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include media-sp {
+    flex-direction: column;
+    gap: rem(20);
+  }
+  .block-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p.date {
+    @include text-3xl;
+
+    &::before,
+    &::after {
+      @include text-3xl-before-after;
+    }
+  }
+}
+
 .block-rsvp-paper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100% / 12 * 8);
+  width: 100% / 12 * 8;
   @include bg-paper;
 
-  /* 12分割中の8 */
   @include media-sp() {
-    width: 100%;
+    width: calc(100% + rem(30));
   }
+
 
   p {
     @include text-m;
-
     &::before,
     &::after {
       @include text-m-before-after;
     }
   }
 
-  .block-attend {
+  .block-attend-absence {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: rem(64);
+    gap: rem(0);
+    width: calc(100% + rem(60));
 
     @include media-sp {
       gap: rem(32);
 
     }
 
+    .attend,
+    .absence {
+      position: relative;
+      width: 50% / 4 * 3;
+      height: rem(200);
 
-    img.attend,
-    img.absence {
-      width: rem(150);
+      .hover-add {
+        display: none;
+
+        .fill {
+          position: absolute;
+          z-index: 2;
+          opacity: 1;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: rem(200);
+        }
+      }
+
+      .text {
+        position: absolute;
+        z-index: 2;
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: rem(12);
+        height: rem(150);
+
+        p.title {
+          @include text-xl;
+
+          &::before,
+          &::after {
+            @include text-xl-before-after;
+          }
+
+          @include media-sp {
+            @include text-m;
+
+            &::before,
+            &::after {
+              @include text-m-before-after;
+            }
+
+          }
+        }
+
+        p.sub-title {
+          text-align: center;
+          @include text-s;
+
+          @include media-sp {
+            @include text-ss;
+
+          }
+        }
+
+      }
+
+      .btn {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: rem(150);
+      }
 
       @include media-sp {
         width: 100% / 12 * 4;
       }
     }
-
-    // img.attend {
-    //   margin-right: rem(64);
-
-    // }
 
   }
 
@@ -991,20 +1215,64 @@ img.svg-title-date-place {
     @include media-sp() {
       width: calc(calc(100% + rem(30) + rem(30)) / 12 * 10);
     }
+
+    a.red {
+      color: $y-dull-red;
+    }
+
+    .btn {
+      border: 30px solid orange;
+      border-image-source: url(/img/bg-button.webp);
+      border-image-slice: 33.4% fill;
+      border-image-repeat: repeat;
+
+      p {
+        color: white;
+      }
+    }
+  }
+
+  .form,
+  .form-l {
+    width: 100%;
+    border: rem(30) solid orange;
+    border-image-source: url(/img/bg-form.webp);
+    border-image-slice: 33.4% fill;
+    border-image-repeat: repeat;
+    height: 50px;
+  }
+
+  .form-l {
+    height: rem(300);
+  }
+
+  .two-col {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+
+    >div {
+      width: calc(50% - 20px);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+
+      // テキストの背景色がbefore afterのネガマジ無視されちゃう問題、flexの中に入れれば解決できる!
+    }
+
+    @include media-sp() {
+      >div {
+        width: calc(50% - 10px);
+      }
+    }
+
   }
 
 }
 
-.block-madeni {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  @include media-sp {
-    flex-direction: column;
-    gap: rem(20);
-  }
-}
 
 .svg-title-rsvp {
   height: rem(38);
@@ -1027,7 +1295,7 @@ img.svg-title-date-place {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-image: url(img/bg-footer.webp);
+  background-image: url(/img/bg-footer.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1043,11 +1311,18 @@ img.svg-title-date-place {
     }
   }
 
-  img.go-top {
-    width: 100% / 12 * 1;
+  .go-top {
+    z-index: 1;
     position: absolute;
     top: rem(40);
     right: rem(60);
+    width: 100% / 12 * 1;
+    height: rem(100);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
 
     @include media-sp {
       width: calc((100% - 64px) / 12 * 2);
@@ -1064,7 +1339,7 @@ img.svg-title-date-place {
   padding: 0 rem(60);
 
   @include media-sp {
-    padding: 0 rem(32);
+    padding: 0 rem(16);
   }
 
   .block-footer-date-place {
@@ -1072,6 +1347,7 @@ img.svg-title-date-place {
     flex-direction: row;
     align-items: start;
     gap: rem(64);
+    margin-left: 100% / 12 * 1;
 
     @include media-sp {
       flex-direction: column;
@@ -1139,10 +1415,6 @@ img.svg-title-date-place {
       @include text-s-before-after;
     }
   }
-
-
-
-
 }
 
 .block-copyright-ytlogo {
@@ -1155,14 +1427,13 @@ img.svg-title-date-place {
 
   p {
     width: 100% / 12 * 10;
+    letter-spacing: 0.1em;
     @include text-s;
 
     &::before,
     &::after {
       @include text-s-before-after;
     }
-
-    letter-spacing: 0.1em;
 
     @include media-sp {
       @include text-ss;
@@ -1172,5 +1443,30 @@ img.svg-title-date-place {
   img {
     width: 100% / 12 * 1;
     /* 12分割中の1 */
+  }
+}
+
+
+// アニメーション
+
+.animate {
+  opacity: 0;
+  transform: translateY(rem(8));
+  animation: move-up 0.5s ease-in-out forwards;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(rem(8));
+}
+
+.fade-add {
+  animation: move-up 0.5s ease-in-out forwards;
+}
+
+@keyframes move-up {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

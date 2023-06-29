@@ -16,6 +16,7 @@ $y-pink: magenta;
 $y-sepia: #D9DBD0;
 $y-dark-green: #14201A;//rsvpの背景色。未使用。
 $y-dark-brown: #251F16;//左右柱の背景色。
+$y-dull-red: #D44242;//formの注釈色。
 
 $margin40: 40px;
 $yamaguchi-red: none;
@@ -32,7 +33,7 @@ $yamaguchi-red: none;
     display: block;
     width: 0;
     height: 0;
-    margin-top: -0.2em;
+    margin-top: -0.1em;
     content: "";
 }
 
@@ -54,8 +55,13 @@ $yamaguchi-red: none;
     line-height: 1;
     background-color: violet;
 }
-//xlはbeforeとafterなしでok
-
+@mixin text-xl-before-after(){
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: 0em;
+    content: "";
+}
 @mixin text-l(){ 
     font-size: rem(18);
     line-height: 1.5;
@@ -70,7 +76,6 @@ $yamaguchi-red: none;
 }
 
 @mixin text-ml(){ 
-    color: white;
     font-size: rem(18);
     font-family: "YuMincho +36p Kana", "游明朝体+36ポかな";
     font-weight: 600;
@@ -128,7 +133,7 @@ $yamaguchi-red: none;
 //紙テクスチャ背景
 @mixin bg-paper(){
     border: 1.875rem solid orange;
-    border-image-source: url(img/bg-paper.webp);
+    border-image-source: url(/img/bg-paper.webp);
     border-image-slice: 4% fill;
     border-image-repeat: repeat;
 }
