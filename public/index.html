@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp_s.min.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style/style.scss">
@@ -54,7 +56,7 @@
         <div class="block-marumado animate">
           <img src="img/ornament-marumado-a.svg" class="svg-ornament-marumado-a" alt="">
           <img src="img/ornament-marumado-b.svg" class="svg-ornament-marumado-b" alt="">
-          <img src="img/photo-marumado.webp" alt="">
+          <img src="img/photo-marumado.webp" class="marumado" alt="">
         </div>
         <!-- 新郎新婦テキスト -->
         <div class="block-text">
@@ -347,8 +349,11 @@
         <div class='my40'></div>
         <div class="block-attend-absence"><!-- ご出席・ご欠席 -->
           <div class="attend hover-target">
+            <!-- hover時に表示するもの -->
             <div class="hover-add">
-              <img src="/img/ornament-attend-fill.svg" class="fill">
+              <img src="img/ornament-attend-absence-thank-you.svg" class="thank-you">
+              <img src="img/ornament-attend-absence-line.svg" class="line">
+              <img src="img/ornament-attend-absence-fill.svg" class="fill">
             </div>
             <div class="text pc">
               <p class="title">ご出席</p>
@@ -362,7 +367,8 @@
           </div>
           <div class="absence hover-target">
             <div class="hover-add">
-              <img src="/img/ornament-attend-fill.svg" class="fill">
+              <img src="img/ornament-attend-absence-line.svg" class="line">
+              <img src="img/ornament-attend-absence-fill.svg" class="fill">
             </div>
             <div class="text">
               <p class="title">ご欠席</p>
@@ -453,7 +459,8 @@
             <div class="my20"></div>
             <div class="-my30"></div><!-- ボーダー画像分30pxをネガティブマージン -->
           </div>
-          <div class="my80"></div>
+          <div class="my80 pc"></div>
+          <div class="my40 sp"></div>
           <div class="-my30"></div><!-- ボーダー画像分30pxをネガティブマージン -->
         </div>
       </div><!-- RSVP 紙ブロック -->
@@ -551,22 +558,22 @@
         <div class="my80 sp"></div>
         <!-- copyrightとYTロゴ -->
         <div class="block-copyright-ytlogo">
-          <!-- 右のYTロゴをmargin無視させたいので高さ1pxのdivでくくってる -->
+          <!-- 右のYTロゴをmargin無視させたいので高さ12pxのdivでくくってる -->
           <p class=""><!-- copyright -->
             © 2023 This site was created by Yuki Okamura and Shohei Yamaguchi. | ALL RIGHTS
             RESERVED
           </p>
           <img src="img/footer-logo.svg" alt="">
         </div>
-        <div class="my80 pc"></div>
+        <div class="my40 pc"></div>
         <div class="my20 sp"></div>
       </div>
     </div><!-- footer -->
   </div><!-- ブロックを縦に積む -->
 
-  <script src="./y-fade.js"></script>
-  <script src="./y-hover-add.js"></script>
-  <script src="./y-smooth-scroll.js"></script>
+  <script src="js/y-fade.js"></script>
+  <script src="js/y-hover-add.js"></script>
+  <script src="js/y-smooth-scroll.js"></script>
 
 </body>
 

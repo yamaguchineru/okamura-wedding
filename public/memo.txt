@@ -1,0 +1,18 @@
+聞きたい
+・サイトのコンテンツを超えて上や下にスクロールしたとき見えるサイトの裏側にbackground imageが効かない
+・publicフォルダの中にindexもいれるのであってる?
+
+
+タスク
+・スマホrsvpのフォームの高さが変えられない(// heightをもう少し小さくしたいけどボーダーだけで60pxあるからむり どうにかしたい)
+
+枠のsvg
+https://think-local.dmdepart.jp/
+
+
+
+@font-face {
+  font-family: sackers;
+  src: url(asset/font/sackers.woff2) format(woff2);
+}
+これ確認
