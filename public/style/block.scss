@@ -1296,6 +1296,9 @@ img.svg-title-date-place {
 
   .form-l {
     height: rem(300);
+    @include media-sp {
+      height: rem(180);
+    }
   }
 
   .two-col {
