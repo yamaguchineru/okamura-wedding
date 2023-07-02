@@ -246,8 +246,8 @@
           <p class="fade">霞が関三丁目2番1号</p>
           <div class="my20"></div>
 
-          <div class="btn"><!-- ボタン。ボーダーは12px -->
-            <a class="link" href="https://www.kazankaikan-wedding.com/" target="_blank"></a>
+          <div class="btn-brown"><!-- ボタン。ボーダーは12px -->
+            <a href="https://www.kazankaikan-wedding.com/" target="_blank"></a>
             <div class="-my12"></div><!-- ボーダー画像分12pxをネガティブマージン -->
             <div class="my16"></div>
             <div class="block-text-arrow"><!-- 矢印と横並び -->
@@ -347,6 +347,7 @@
         <p>いずれかをお選びください</p>
         <div class='my40'></div>
         <div class="block-attend-absence"><!-- ご出席・ご欠席 -->
+          <!-- 出席ボタン -->
           <div class="attend hover-target">
             <!-- hover時に表示するもの -->
             <div class="hover-add">
@@ -362,9 +363,11 @@
               <p class="title">ご出席</p>
               <p class="sub-title">will attend</p>
             </div>
-            <img src="img/btn-attend.svg" class="btn">
+            <img src="img/btn-attend.svg" class="attend-absence-btn">
           </div>
+          <!-- 欠席ボタン -->
           <div class="absence hover-target">
+            <!-- hover時に表示するもの -->
             <div class="hover-add">
               <img src="img/ornament-attend-absence-line.svg" class="line">
               <img src="img/ornament-attend-absence-fill.svg" class="fill">
@@ -373,7 +376,7 @@
               <p class="title">ご欠席</p>
               <p class="sub-title">will not attend</p>
             </div>
-            <img src="img/btn-attend.svg" class="btn">
+            <img src="img/btn-attend.svg" class="attend-absence-btn">
           </div>
         </div>
         <div class='my40'></div>
@@ -451,7 +454,8 @@
           <div class="my32"></div>
           <hr class="hr" color="#D7D3CF">
           <div class="my32"></div>
-          <div class="btn"><!-- ボタン。ボーダー分でパディングうまくいってない -->
+          <div class="btn-brown btn-confirm"><!-- ボタン。ボーダー分でパディングうまくいってない -->
+            <a href="confirm.html"></a>
             <div class="-my30"></div><!-- ボーダー画像分30pxをネガティブマージン -->
             <div class="my20"></div>
             <p>入力内容を確認する</p><!-- ボタン内テキストのline-heightのbefore afterがなぜか表示上効かない.. -->

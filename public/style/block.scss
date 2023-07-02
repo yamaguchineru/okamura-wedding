@@ -537,6 +537,7 @@ body {
 
       p {
         @include text-m;
+
         &::before,
         &::after {
           display: block;
@@ -545,6 +546,7 @@ body {
           margin-left: -0.3em;
           content: "";
         }
+
         @include text-vertical;
         margin-bottom: rem(16);
 
@@ -893,16 +895,11 @@ body {
     }
 
     .block-text {
-      div.btn {
-        position: relative;
+      .btn-brown {
         border: 12px solid orange;
         border-image-source: url(/img/bg-btn-brown.webp);
         border-image-slice: 33.4% fill;
         border-image-repeat: repeat;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
 
         .block-text-arrow {
           margin: 0 1.5rem;
@@ -923,12 +920,10 @@ body {
           }
         }
 
-        a.link {
-          position: absolute;
-          top: 0;
-          left: 0;
+        a {
+          display: block;
           width: 100%;
-          height: 100%;
+          // うまくaが覆えない
         }
 
       }
@@ -1008,11 +1003,11 @@ img.svg-title-date-place {
     }
 
     .map {
-      width: calc(calc(100% + rem(30) + rem(30)) /10*6);
+      width: calc(calc(100% + rem(60)) / 10 * 6);
       height: rem(400);
 
       @include media-sp() {
-        width: calc(calc(100% + rem(30) + rem(30)) /12*10);
+        width: calc(calc(100% + rem(60)) / 12 * 10);
       }
     }
 
@@ -1164,7 +1159,7 @@ img.svg-title-date-place {
           transform-origin: 50% 50%;
           width: rem(200);
         }
-        
+
         .fill {
           position: absolute;
           z-index: 2;
@@ -1223,7 +1218,7 @@ img.svg-title-date-place {
 
       }
 
-      .btn {
+      .attend-absence-btn {
         position: absolute;
         z-index: 1;
         top: 50%;
@@ -1268,16 +1263,7 @@ img.svg-title-date-place {
       color: $y-dull-red;
     }
 
-    .btn {
-      border: 30px solid orange;
-      border-image-source: url(/img/bg-button.webp);
-      border-image-slice: 33.4% fill;
-      border-image-repeat: repeat;
-
-      p {
-        color: white;
-      }
-    }
+    
   }
 
   .form,
@@ -1288,6 +1274,7 @@ img.svg-title-date-place {
     border-image-slice: 33.4% fill;
     border-image-repeat: repeat;
     height: rem(50);
+
     @include media-sp {
       // heightをもう少し小さくしたいけどボーダーだけで60pxあるからむり どうにかしたい
       height: rem(40);
@@ -1296,6 +1283,7 @@ img.svg-title-date-place {
 
   .form-l {
     height: rem(300);
+
     @include media-sp {
       height: rem(180);
     }
@@ -1326,6 +1314,85 @@ img.svg-title-date-place {
 
   }
 
+  .btn-confirm {
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      // ボーダーが全体を覆っているのでaが効かない
+    }
+  }
+
+}
+
+// 確認画面
+.block-rsvp-paper {
+  .confirm {
+    width: calc((100% + rem(60)) / 8 * 6);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: rem(32);
+    @include media-sp {
+      width: calc(calc(100% + rem(60)) / 12 * 10);
+
+    }
+
+    .confirm-row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      @include media-sp {
+        flex-direction: column;
+        gap: rem(12);
+      }
+      p:nth-child(1) {
+        width: 100% / 6 * 2;
+        @include media-sp {
+          width: 100%;
+          @include text-s;
+        }
+      }
+      
+      p:nth-child(2) {
+        width: 100% / 6 * 4;
+        @include media-sp {
+          width: 100%;
+        }
+      }
+    }
+    .btn-row {
+      display: flex;
+      flex-direction: row;
+      gap: rem(20);
+      @include media-sp {
+        flex-direction: column;
+      }
+    }
+  
+  }
+}
+
+// 送信しました画面
+.block-rsvp-top {
+  .sent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .svg-title-thank-you {
+      height: rem(56)
+    }
+    .btn-sepia {
+      p {
+        @include text-m;
+        &::before,
+        &::after {
+          @include text-m-before-after;
+        }
+      }
+    }
+  }
 }
 
 
@@ -1373,6 +1440,7 @@ img.svg-title-date-place {
     right: rem(60);
     width: 100% / 12 * 1;
     height: rem(100);
+
     &:hover {
       opacity: 0.5;
     }
@@ -1479,6 +1547,7 @@ img.svg-title-date-place {
   justify-content: space-between;
   width: 100%;
   height: rem(12);
+
   @include media-sp {
     height: rem(20);
   }
@@ -1501,7 +1570,7 @@ img.svg-title-date-place {
 
   img {
     width: 100% / 12 * 1;
-    
+
     @include media-sp {
       width: 100% / 12 * 2;
     }
