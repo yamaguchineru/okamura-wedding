@@ -12,109 +12,108 @@
     width: 100px;
     font-size: rem(12);
     text-align: center;
-    border: 2px;
-    border-style: dashed;
-    border: 2px;
-    border-style: dashed;
+    // border: 2px;
+    // border-style: dashed;
+    border: 0px;
+    // border-style: dashed;
   }
 }
 
 .my160 {
   &:before {
-    content: "160px";
+    content: "";
     line-height: 14;
     height: rem(160);
-    border-color: $y-gold;
+    // border-color: $y-gold;
     color: $y-gold;
   }
   @include media-sp {
     &:before {
-      content: "80px";
+      content: "";
       line-height: 6;
       height: rem(80);
-      border-color: $y-red;
+      // border-color: $y-red;
       color: $y-red;
     }
   }
-
 }
 
 .my80 {
   &:before {
-    content: "80px";
+    content: "";
     line-height: 6;
     height: rem(80);
-    border-color: $y-red;
+    // border-color: $y-red;
     color: $y-red;
   }
 }
 
 .my40 {
   &:before {
-    content: "40px";
+    content: "";
     line-height: 3;
     height: rem(40);
-    border-color: $y-green;
+    // border-color: $y-green;
     color: $y-green;
   }
 }
 
 .my32 {
   &:before {
-    content: "32px";
+    content: "";
     line-height: 3;
     height: rem(32);
-    border-color: $y-green;
+    // border-color: $y-green;
     color: $y-green;
   }
 }
 
 .my20 {
   &:before {
-    content: "20px";
+    content: "";
     line-height: 1.5;
     height: rem(20);
-    border-color: $y-lime;
+    // border-color: $y-lime;
     color: $y-lime;
   }
 }
 
 .my16 {
   &:before {
-    content: "16px";
+    content: "";
     line-height: 1;
     height: rem(16);
-    border-color: $y-purple;
+    // border-color: $y-purple;
     color: $y-purple;
   }
 }
 
 .my12 {
   &:before {
-    content: "12px";
+    content: "";
     line-height: 0.75;
     height: rem(12);
-    border-color: $y-blue;
+    // border-color: $y-blue;
     color: $y-blue;
   }
 }
 
 .my8 {
   &:before {
-    content: "8px";
+    content: "";
     line-height: 0.75;
     height: rem(8);
-    border-color: $y-sky;
+    // border-color: $y-sky;
     color: $y-sky;
   }
 }
 
 .my6 {
   &:before {
-    content: "6px";
+    content: "";
     line-height: 2;
     height: rem(6);
-    border-color: $y-pink;
+    // border-color: $y-pink;
     color: $y-pink;
   }
 }

@@ -7,7 +7,7 @@ body {
 
 .block-guide {
   z-index: 1000;
-  background-image: url('/img/bg-guide.webp');
+  background-image: url("/img/bg-guide.webp");
   background-color: rgba(0, 0, 100, 0);
   background-size: contain;
   width: calc(100% - rem(120));
@@ -22,8 +22,8 @@ body {
   @include media-sp() {
     width: calc(100% - rem(32));
   }
+  display: none;
 }
-
 
 //左右柱
 .block-side-bar-left,
@@ -32,6 +32,9 @@ body {
   opacity: 1;
   position: fixed;
   background-color: $y-dark-brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   p {
     position: absolute;
@@ -39,7 +42,9 @@ body {
     transform-origin: center;
     color: white;
     @include text-ml;
-
+    line-height: 1;
+    writing-mode: vertical-rl;
+    width: 1em;
     &::before,
     &::after {
       @include text-ml-before-after;
@@ -58,9 +63,9 @@ body {
   left: 0;
 
   p {
-    top: 50%;
-    left: -10%;
-    transform: rotate(-90deg);
+    // top: 50%;
+    // left: -10%;
+    // transform: rotate(-90deg);
   }
 }
 
@@ -71,9 +76,9 @@ body {
   right: 0;
 
   p {
-    top: 50%;
-    right: -91%;
-    transform: rotate(90deg);
+    // top: 50%;
+    // right: -91%;
+    // transform: rotate(90deg);
   }
 }
 
@@ -113,7 +118,6 @@ body {
 
   @include media-sp {
     top: rem(20);
-
   }
 
   a.aisatsu,
@@ -158,7 +162,6 @@ body {
   }
 }
 
-
 //KV・Messageブロック
 .block-kv-message {
   display: flex;
@@ -172,13 +175,10 @@ body {
   background-position: center;
   background-size: 80%;
 
-
   /* マージン左右60pxずつとった上で12分割中の12 */
   @include media-sp() {
     padding: 0 rem(16);
   }
-
-
 
   //丸窓とテキスト
   .block-kv {
@@ -192,8 +192,6 @@ body {
     @include media-sp {
       margin-top: rem(24);
     }
-
-
 
     .go-rsvp {
       position: absolute;
@@ -241,12 +239,8 @@ body {
         display: block;
         width: 100%;
         height: 100%;
-
-
       }
-
     }
-
 
     .block-marumado {
       position: relative;
@@ -327,7 +321,6 @@ body {
         position: absolute;
       }
 
-
       .block-kv-katagaki {
         @include text-ml;
         @include text-vertical;
@@ -363,9 +356,7 @@ body {
           content: "";
         }
       }
-
     }
-
 
     //KV 新郎テキスト
     .block-kv-shinro {
@@ -390,7 +381,6 @@ body {
         margin: 2.5rem 1.75rem 0 0;
         letter-spacing: 0.4em;
         transform: scaleX(0.9);
-
       }
 
       .block-kv-name-en {
@@ -399,7 +389,6 @@ body {
         letter-spacing: 0.1em;
       }
     }
-
 
     //KV 新婦テキスト
     .block-kv-shinpu {
@@ -434,11 +423,8 @@ body {
     }
 
     //KV 新婦テキスト
-
   }
 }
-
-
 
 // メッセージ
 .block-message-paper {
@@ -469,11 +455,10 @@ body {
   }
 }
 
-
 //プロフィール
 .block-profile {
   position: relative;
-  background-color: $y-sepia;
+  // background-color: $y-sepia;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -481,13 +466,10 @@ body {
   width: 100%;
   padding: 0 rem(60);
 
-  background-image:
-    url(/img/bg-ornament-profile-a.webp),
+  background-image: url(/img/bg-ornament-profile-a.webp),
     url(/img/bg-ornament-profile-b.webp);
 
-  background-position:
-    top -10% left 0%,
-    bottom -20% right 0%;
+  background-position: top -10% left 0%, bottom -20% right 0%;
 
   background-repeat: no-repeat;
   background-size: 45%;
@@ -503,7 +485,6 @@ body {
 
     @include media-sp {
       height: rem(45);
-
     }
   }
 
@@ -549,7 +530,6 @@ body {
 
         @include text-vertical;
         margin-bottom: rem(16);
-
       }
     }
 
@@ -675,7 +655,7 @@ body {
         margin-top: rem(80);
       }
 
-      >div {
+      > div {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -685,7 +665,7 @@ body {
           margin-right: 0;
         }
 
-        >div.line {
+        > div.line {
           height: 10px;
 
           @include media-sp() {
@@ -738,7 +718,6 @@ body {
   }
 
   //プロフィール新婦
-
 }
 
 //日時・会場
@@ -863,7 +842,7 @@ body {
 
   //日時
   .block-date {
-    background-color: #001C12;
+    background-color: #001c12;
 
     .block-text {
       @include media-sp {
@@ -885,7 +864,7 @@ body {
 
   //会場
   .block-place {
-    background-color: #251F16;
+    background-color: #251f16;
 
     .block-photo {
       background-image: url(/img/photo-place.webp);
@@ -925,10 +904,8 @@ body {
           width: 100%;
           // うまくaが覆えない
         }
-
       }
     }
-
   }
 }
 
@@ -941,7 +918,6 @@ img.svg-title-date-place {
     height: rem(33);
   }
 }
-
 
 //マップ
 .block-map {
@@ -1022,10 +998,8 @@ img.svg-title-date-place {
 
       @include media-sp {
         width: calc(calc(100% + rem(60)) / 12 * 10);
-
       }
     }
-
   }
 }
 
@@ -1075,7 +1049,6 @@ img.svg-title-date-place {
   }
 }
 
-
 .block-madeni {
   display: flex;
   flex-direction: row;
@@ -1113,7 +1086,6 @@ img.svg-title-date-place {
     width: calc(100% + rem(30));
   }
 
-
   p {
     @include text-m;
 
@@ -1133,7 +1105,6 @@ img.svg-title-date-place {
 
     @include media-sp {
       gap: rem(32);
-
     }
 
     .attend,
@@ -1170,7 +1141,6 @@ img.svg-title-date-place {
           transform-origin: 50% 50%;
           width: rem(200);
         }
-
       }
 
       .text {
@@ -1202,7 +1172,6 @@ img.svg-title-date-place {
             &::after {
               @include text-m-before-after;
             }
-
           }
         }
 
@@ -1212,10 +1181,8 @@ img.svg-title-date-place {
 
           @include media-sp {
             @include text-ss;
-
           }
         }
-
       }
 
       .attend-absence-btn {
@@ -1262,8 +1229,6 @@ img.svg-title-date-place {
     a.red {
       color: $y-dull-red;
     }
-
-    
   }
 
   .form,
@@ -1296,7 +1261,7 @@ img.svg-title-date-place {
     align-items: start;
     justify-content: space-between;
 
-    >div {
+    > div {
       width: calc(50% - 20px);
       display: flex;
       flex-direction: column;
@@ -1307,11 +1272,10 @@ img.svg-title-date-place {
     }
 
     @include media-sp() {
-      >div {
+      > div {
         width: calc(50% - 10px);
       }
     }
-
   }
 
   .btn-confirm {
@@ -1322,7 +1286,6 @@ img.svg-title-date-place {
       // ボーダーが全体を覆っているのでaが効かない
     }
   }
-
 }
 
 // 確認画面
@@ -1335,7 +1298,6 @@ img.svg-title-date-place {
     gap: rem(32);
     @include media-sp {
       width: calc(calc(100% + rem(60)) / 12 * 10);
-
     }
 
     .confirm-row {
@@ -1354,7 +1316,7 @@ img.svg-title-date-place {
           @include text-s;
         }
       }
-      
+
       p:nth-child(2) {
         width: 100% / 6 * 4;
         @include media-sp {
@@ -1370,7 +1332,6 @@ img.svg-title-date-place {
         flex-direction: column;
       }
     }
-  
   }
 }
 
@@ -1381,7 +1342,7 @@ img.svg-title-date-place {
     flex-direction: column;
     align-items: center;
     .svg-title-thank-you {
-      height: rem(56)
+      height: rem(56);
     }
     .btn-sepia {
       p {
@@ -1395,7 +1356,6 @@ img.svg-title-date-place {
   }
 }
 
-
 .svg-title-rsvp {
   height: rem(38);
 
@@ -1407,7 +1367,6 @@ img.svg-title-date-place {
 .svg-dashed-line {
   width: rem(144);
 }
-
 
 //フッター
 .block-footer {
@@ -1421,15 +1380,13 @@ img.svg-title-date-place {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #D2CDB1;
-
+  background-color: #d2cdb1;
 
   img.svg-title-footer {
     width: calc(100% / 12 * 5);
 
     @include media-sp {
       width: calc(100% / 12 * 11);
-
     }
   }
 
@@ -1455,7 +1412,6 @@ img.svg-title-date-place {
       width: 100%;
       height: 100%;
     }
-
   }
 }
 
@@ -1484,7 +1440,6 @@ img.svg-title-date-place {
   display: flex;
   flex-direction: row;
   overflow: visible;
-
 }
 
 .block-footer-place {
@@ -1552,7 +1507,6 @@ img.svg-title-date-place {
     height: rem(20);
   }
 
-
   p {
     width: 100% / 12 * 10;
     letter-spacing: 0.1em;
@@ -1576,7 +1530,6 @@ img.svg-title-date-place {
     }
   }
 }
-
 
 // アニメーション
 
